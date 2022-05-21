@@ -1,5 +1,6 @@
 package cn.mcbugdev.another_tools;
 
+import cn.mcbugdev.another_tools.init.ItemRegistration;
 import cn.mcbugdev.another_tools.utils.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -30,6 +31,7 @@ public class AnotherTools {
         bus.addListener(this::enqueueIMC);
         bus.addListener(this::processIMC);
         bus.addListener(this::doClientStuff);
+        ItemRegistration.ITEMS.register(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
