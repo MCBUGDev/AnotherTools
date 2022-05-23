@@ -1,10 +1,12 @@
 package cn.mcbugdev.another_tools.objects.items.tools;
 
+import cn.mcbugdev.another_tools.init.ItemRegistration;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
 public enum ATTiers implements IItemTier {
-    ;
+    POTATO(5120,20,7.4f,7,30,Ingredient.fromItems(ItemRegistration.POTATO_INGOT.get()));
+
     private final int maxUses;
     private final float efficiency;
     private final float attackDamage;
