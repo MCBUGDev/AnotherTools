@@ -1,9 +1,11 @@
 package cn.mcbugdev.another_tools;
 
+import cn.mcbugdev.another_tools.init.BlockRegistration;
 import cn.mcbugdev.another_tools.init.ItemRegistration;
 import cn.mcbugdev.another_tools.utils.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +34,7 @@ public class AnotherTools {
         bus.addListener(this::processIMC);
         bus.addListener(this::doClientStuff);
         ItemRegistration.ITEMS.register(bus);
+        BlockRegistration.BLOCKS.register(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
