@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "another_tools:block/kepler_earth"
+    }
+  }
+}

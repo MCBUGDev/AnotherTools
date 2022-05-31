@@ -1,5 +1,8 @@
 {
   "itemGroup.another_tools": "工具拓展",
+  "block.another_tools.kepler_grass_block": "开普勒22b 草方块",
+  "block.another_tools.kepler_earth": "开普勒22b 泥土",
   "item.another_tools.potato_ingot": "土豆锭",
-  "item.another_tools.potato_sword": "土豆剑"
+  "item.another_tools.potato_sword": "土豆剑",
+  "item.another_tools.potato_pickaxe": "土豆镐"
 }

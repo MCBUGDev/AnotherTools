@@ -1,5 +1,8 @@
 {
   "itemGroup.another_tools": "Another Tools",
+  "block.another_tools.kepler_grass_block": "Kepler Grass Block",
+  "block.another_tools.kepler_earth": "Kepler Dirt",
   "item.another_tools.potato_ingot": "Potato Ingot",
-  "item.another_tools.potato_sword": "Potato Sword"
+  "item.another_tools.potato_sword": "Potato Sword",
+  "item.another_tools.potato_pickaxe": "Potato Pickaxe"
 }

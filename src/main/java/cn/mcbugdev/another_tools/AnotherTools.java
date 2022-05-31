@@ -1,7 +1,9 @@
 package cn.mcbugdev.another_tools;
 
 import cn.mcbugdev.another_tools.init.BlockRegistration;
+import cn.mcbugdev.another_tools.init.EntityRegistration;
 import cn.mcbugdev.another_tools.init.ItemRegistration;
+import cn.mcbugdev.another_tools.objects.entity.ModelRegisterHandler;
 import cn.mcbugdev.another_tools.utils.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -35,6 +37,8 @@ public class AnotherTools {
         bus.addListener(this::doClientStuff);
         ItemRegistration.ITEMS.register(bus);
         BlockRegistration.BLOCKS.register(bus);
+        EntityRegistration.ENTITIES.register(bus);
+        bus.register(new ModelRegisterHandler());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -44,6 +48,10 @@ public class AnotherTools {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+        event.enqueueWork(()->{
+            MinecraftForge.EVENT_BUS.register(ModelRegisterHandler.class);
+        }
+        );
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
@@ -62,6 +70,5 @@ public class AnotherTools {
 
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-        LOGGER.info("HELLO from server starting");
     }
 }
